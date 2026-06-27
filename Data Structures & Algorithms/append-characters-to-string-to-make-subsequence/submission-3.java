@@ -1,0 +1,21 @@
+class Solution {
+    public int appendCharacters(String s, String t) {
+        if (t.isEmpty()){
+            return 0;
+        }
+
+        int s_ind = 0, t_ind = 0;
+        
+        while (s_ind < s.length()){
+            if (t.charAt(t_ind) == s.charAt(s_ind)){
+                t_ind += 1;
+            }
+             
+            if (t_ind == t.length()){
+                return 0;
+            }
+            s_ind += 1;
+        }
+        return t.length() - t_ind;
+    }
+}
